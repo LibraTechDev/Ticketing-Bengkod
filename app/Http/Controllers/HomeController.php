@@ -24,8 +24,8 @@ class HomeController extends Controller
             $eventsQuery->where('kategori_id', $request->kategori);
         }
 
-        // Ambil semua events yang sudah difilter
-        $events = $eventsQuery->latest()->get();
+        // Ambil events yang sudah difilter dengan pagination (4 per halaman)
+        $events = $eventsQuery->latest()->paginate(4)->withQueryString();
 
         return view('home', compact('categories', 'events'));
     }

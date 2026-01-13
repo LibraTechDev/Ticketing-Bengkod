@@ -146,5 +146,55 @@
                 </div>
             @endforelse
         </div>
+
+        <!-- Pagination -->
+        @if($events->hasPages())
+            <div class="mt-12 flex justify-center">
+                <div class="join">
+                    {{-- Previous Button --}}
+                    @if ($events->onFirstPage())
+                        <button class="join-item btn btn-disabled">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            Prev
+                        </button>
+                    @else
+                        <a href="{{ $events->previousPageUrl() }}" class="join-item btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            Prev
+                        </a>
+                    @endif
+
+                    {{-- Page Numbers --}}
+                    @foreach ($events->getUrlRange(1, $events->lastPage()) as $page => $url)
+                        @if ($page == $events->currentPage())
+                            <button class="join-item btn btn-active btn-primary">{{ $page }}</button>
+                        @else
+                            <a href="{{ $url }}" class="join-item btn">{{ $page }}</a>
+                        @endif
+                    @endforeach
+
+                    {{-- Next Button --}}
+                    @if ($events->hasMorePages())
+                        <a href="{{ $events->nextPageUrl() }}" class="join-item btn">
+                            Next
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    @else
+                        <button class="join-item btn btn-disabled">
+                            Next
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    @endif
+                </div>
+            </div>
+        @endif
     </section>
 </x-layouts.app>
