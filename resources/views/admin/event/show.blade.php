@@ -96,7 +96,7 @@
                         <div class="avatar max-w-sm">
                             <div class="w-full rounded-lg">
                                 @if ($event->gambar)
-                                    <img id="previewImg" src="{{ asset('images/events/' . $event->gambar) }}" alt="Preview">
+                                    <img id="previewImg" src="{{ asset('storage/' . $event->gambar) }}" alt="Preview">
                                 @else
                                     <img id="previewImg" src="" alt="Preview">
                                 @endif

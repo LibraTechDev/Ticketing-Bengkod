@@ -44,9 +44,9 @@ class EventController extends Controller
 
             // Handle file upload
             if ($request->hasFile('gambar')) {
-                $imageName = time() . '.' . $request->gambar->extension();
-                $request->gambar->move(public_path('images/events'), $imageName);
-                $validatedData['gambar'] = $imageName;
+                $filename = time() . '.' . $request->file('gambar')->getClientOriginalExtension();
+                $path = $request->file('gambar')->storeAs('events', $filename, 'public');
+                $validatedData['gambar'] = $path;
             }
 
             $validatedData['user_id'] = auth()->user()->id ?? null;
@@ -100,9 +100,9 @@ class EventController extends Controller
 
             // Handle file upload
             if ($request->hasFile('gambar')) {
-                $imageName = time() . '.' . $request->gambar->extension();
-                $request->gambar->move(public_path('images/events'), $imageName);
-                $validatedData['gambar'] = $imageName;
+                $filename = time() . '.' . $request->file('gambar')->getClientOriginalExtension();
+                $path = $request->file('gambar')->storeAs('events', $filename, 'public');
+                $validatedData['gambar'] = $path;
             }
 
             $event->update($validatedData);

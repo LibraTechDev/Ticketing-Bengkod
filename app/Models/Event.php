@@ -37,4 +37,13 @@ class Event extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Get the minimum ticket price for this event.
+     */
+    public function getMinPriceAttribute()
+    {
+        return $this->tikets()->min('harga');
+
+    }
 }

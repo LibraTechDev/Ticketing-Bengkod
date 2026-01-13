@@ -14,6 +14,12 @@ class KategoriSeeder extends Seeder
             ['nama_kategori' => 'Konser'],
             ['nama_kategori' => 'Seminar'],
             ['nama_kategori' => 'Workshop'],
+            ['nama_kategori' => 'Olahraga'],
+            ['nama_kategori' => 'Kesenian'],
+            ['nama_kategori' => 'Pesta'],
+            ['nama_kategori' => 'Kuliner'],
+            ['nama_kategori' => 'Lainnya'],
+
         ];
 
         foreach ($kategoris as $kategori) {

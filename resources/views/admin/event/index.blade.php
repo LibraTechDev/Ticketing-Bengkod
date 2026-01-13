@@ -1,5 +1,18 @@
 <x-layouts.admin title="Manajemen Event">
     <div class="container mx-auto p-10">
+         @if (session('success'))
+            <div class="toast toast-top toast-center z-50">
+                <div class="alert alert-success">
+                    <span>{{ session('success') }}</span>
+                </div>
+            </div>
+
+            <script>
+                setTimeout(() => {
+                    document.querySelector('.toast')?.remove()
+                }, 3000)
+            </script>
+        @endif
         <div class="text-sm breadcrumbs mb-4">
             <ul>
                 <li><a href="#">Dashboard</a></li>
