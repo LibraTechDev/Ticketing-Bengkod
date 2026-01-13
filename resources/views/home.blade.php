@@ -123,7 +123,14 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @forelse ($events as $event)
-                <x-event-card :title="$event->judul" :date="$event->tanggal_waktu" :location="$event->lokasi" :price="$event->min_price" :image="asset('storage/' . $event->gambar)" />
+                <x-event-card 
+                    :title="$event->judul" 
+                    :date="$event->tanggal_waktu" 
+                    :location="$event->lokasi" 
+                    :price="$event->min_price" 
+                    :image="asset('storage/' . $event->gambar)"
+                    :tickets="$event->tikets"
+                />
             @empty
                 <div class="col-span-full text-center py-16">
                     <div class="flex flex-col items-center justify-center">
