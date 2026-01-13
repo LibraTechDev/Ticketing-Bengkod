@@ -18,14 +18,14 @@
         <div class="text-sm breadcrumbs mb-4">
             <ul>
                 <li><a href="#">Dashboard</a></li>
-        <li>Manajemen Kategori</li>
+                <li>Manajemen Kategori</li>
             </ul>
         </div>
         <div class="flex">
             <h1 class="text-3xl font-bold mb-4">Manajemen Kategori</h1>
             <button class="btn btn-primary ml-auto" onclick="add_modal.showModal()">Tambah Kategori</button>
         </div>
-        <div class="overflow-x-auto rounded-box bg-white p-5 shadow-xs">
+        <div class="overflow-x-auto rounded-box bg-base-100 p-5 shadow-xs">
             <table class="table">
                 <!-- head -->
                 <thead>

@@ -1,6 +1,6 @@
 <x-layouts.admin title="History Pembelian">
     <div class="container mx-auto p-10">
-        
+
         <div class="text-sm breadcrumbs mb-4">
             <ul>
                 <li><a href="#">Dashboard</a></li>
@@ -11,7 +11,7 @@
         <div class="flex">
             <h1 class="text-3xl font-bold mb-4">History Pembelian</h1>
         </div>
-        <div class="overflow-x-auto rounded-box bg-white p-5 shadow-xs">
+        <div class="overflow-x-auto rounded-box bg-base-100 p-5 shadow-xs">
             <table class="table">
                 <thead>
                     <tr>

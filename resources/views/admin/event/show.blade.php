@@ -112,7 +112,7 @@
                 <h1 class="text-3xl font-semibold mb-4">List Ticket</h1>
                 <button onclick="add_ticket_modal.showModal()" class="btn btn-primary ml-auto">Tambah Ticket</button>
             </div>
-            <div class="overflow-x-auto rounded-box bg-white p-5 shadow-xs">
+            <div class="overflow-x-auto rounded-box bg-base-100 p-5 shadow-xs">
                 <table class="table">
                     <thead>
                         <tr>

@@ -23,10 +23,8 @@
 
         <h1 class="text-3xl font-bold text-base-content mb-8">Pengaturan Akun</h1>
 
-        {{-- Grid Layout: Kiri (Info), Kanan (Password) --}}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-            {{-- BAGIAN 1: EDIT INFORMASI PRIBADI --}}
             <div class="card bg-base-100 shadow-xl">
                 <div class="card-body">
                     <h2 class="card-title mb-4 border-b pb-2">Informasi Pribadi</h2>
@@ -131,7 +129,7 @@
                         </div>
 
                         <div class="card-actions justify-end">
-                            <button type="submit" class="btn btn-neutral">Update Password</button>
+                            <button type="submit" class="btn btn-neutral hover:bg-neutral-700">Update Password</button>
                         </div>
                     </form>
                 </div>

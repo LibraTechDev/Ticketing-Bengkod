@@ -10,7 +10,7 @@
             <h1 class="text-3xl font-bold mb-4">Manajemen Event</h1>
             <a href="{{ route('admin.events.create') }}" class="btn btn-primary ml-auto">Tambah Event</a>
         </div>
-        <div class="overflow-x-auto rounded-box bg-white p-5 shadow-xs">
+        <div class="overflow-x-auto rounded-box bg-base-100 p-5 shadow-xs">
             <table class="table">
                 <thead>
                     <tr>

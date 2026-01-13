@@ -3,15 +3,15 @@
     <div class="flex min-h-full flex-col items-start bg-base-200 w-64 is-drawer-close:w-14 is-drawer-open:w-80">
         <div class="w-full flex items-center justify-center p-4">
             <a href="{{ route('admin.dashboard') }}">
-                <img src="{{ asset('assets/images/logo_bengkod.png') }}" alt="Logo" width="100">
+                <img src="{{ asset('assets/images/logo_bengkod1.png') }}" alt="Logo" width="100">
             </a>
         </div>
 
         <!-- Sidebar content here -->
         <ul class="menu w-full grow gap-1">
             <!-- Dashboard Item -->
-            <li class="{{ request()->routeIs('admin.dashboard') ? 'bg-gray-200 rounded-lg' : '' }}">
-                <a href="{{ route('admin.dashboard') }}" class="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+            <li class="{{ request()->routeIs('admin.dashboard') ? 'bg-base-300 rounded-lg' : '' }}">
+                <a href="{{ route('admin.dashboard') }}" class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300"
                     data-tip="Dashboard">
                     <!-- Home icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -23,9 +23,9 @@
             </li>
 
             <!-- Kategori item -->
-            <li class="{{ request()->routeIs('admin.categories.*') ? 'bg-gray-200 rounded-lg' : '' }}">
+            <li class="{{ request()->routeIs('admin.categories.*') ? 'bg-base-300 rounded-lg' : '' }}">
                 <a href="{{ route('admin.categories.index') }}"
-                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Kategori">
+                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300" data-tip="Kategori">
                     <!-- icon Kategori -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -37,9 +37,9 @@
             </li>
 
             <!-- Event item -->
-            <li class="{{ request()->routeIs('admin.events.*') ? 'bg-gray-200 rounded-lg' : '' }}">
+            <li class="{{ request()->routeIs('admin.events.*') ? 'bg-base-300 rounded-lg' : '' }}">
                 <a href="{{ route('admin.events.index') }}"
-                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Event">
+                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300" data-tip="Event">
                     <!-- icon Event -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -51,9 +51,9 @@
             </li>
 
             <!-- History item -->
-            <li class="{{ request()->routeIs('admin.histories.*') ? 'bg-gray-200 rounded-lg' : '' }}">
+            <li class="{{ request()->routeIs('admin.histories.*') ? 'bg-base-300 rounded-lg' : '' }}">
                 <a href="{{ route('admin.histories.index') }}"
-                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="History">
+                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300" data-tip="History">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
@@ -66,21 +66,21 @@
 
         <!-- Account Settings Button -->
        <div class="w-full px-4 pb-2">
-    <a href="{{ route('admin.profile.index') }}"
-        class="btn w-full border border-gray-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 is-drawer-close:tooltip is-drawer-close:tooltip-right 
-        {{ request()->routeIs('admin.profile.*') 
-            ? 'bg-blue-600 text-white border-blue-600' 
-            : 'bg-white text-gray-700' }}"
-        data-tip="Pengaturan Akun">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-        
-        <span class="is-drawer-close:hidden text">Pengaturan Akun</span>
-    </a>
+            <a href="{{ route('admin.profile.index') }}"
+                class="btn w-full border hover:bg-blue-600 hover:text-white hover:border-blue-600 is-drawer-close:tooltip is-drawer-close:tooltip-right 
+                {{ request()->routeIs('admin.profile.*') 
+                    ? 'bg-blue-600 text-white border-blue-600' 
+                    : 'bg-base-100 text-base-content border-base-300' }}"
+                data-tip="Pengaturan Akun">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                
+                <span class="is-drawer-close:hidden text">Pengaturan Akun</span>
+            </a>
 </div>
 
         <!-- logout -->
