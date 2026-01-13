@@ -65,7 +65,7 @@
                             </svg>
                             <span class="capitalize">{{ $ticket->tipe }}</span>
                         </span>
-                        <span class="badge badge-sm text-black text-bold {{ $ticket->stok > 10 ? 'badge-success' : ($ticket->stok > 0 ? 'badge-warning' : 'badge-error') }}">
+                        <span class="badge badge-sm text-black {{ $ticket->stok > 10 ? 'badge-success' : ($ticket->stok > 0 ? 'badge-warning' : 'badge-error') }}">
                             {{ $ticket->stok }} tersisa
                         </span>
                     </div>
