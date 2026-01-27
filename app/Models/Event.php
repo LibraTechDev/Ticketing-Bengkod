@@ -45,4 +45,9 @@ class Event extends Model
     {
         return $this->tikets()->min('harga');
     }
+
+    public function lokasi()
+    {
+        return $this->belongsTo(Lokasi::class);
+    }
 }
