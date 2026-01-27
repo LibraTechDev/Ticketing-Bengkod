@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\Admin\TiketController;
 use App\Http\Controllers\Admin\AccountController;
@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        
+
         Route::resource('categories', CategoryController::class);
         Route::resource('events', EventController::class);
         Route::resource('tickets', TiketController::class);
