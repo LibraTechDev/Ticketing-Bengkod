@@ -130,6 +130,7 @@
                     :price="$event->min_price" 
                     :image="asset('storage/' . $event->gambar)"
                     :tickets="$event->tikets"
+                    :href="route('events.show', $event)"
                 />
             @empty
                 <div class="col-span-full text-center py-16">

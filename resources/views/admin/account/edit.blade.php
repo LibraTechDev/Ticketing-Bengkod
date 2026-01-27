@@ -26,14 +26,15 @@
                     <div class="flex flex-col md:flex-row gap-8">
                         <!-- Profile Image Section -->
                         <div class="w-full md:w-1/3 flex flex-col items-center">
-                            <div class="avatar placeholder mb-4">
+                            <div class="avatar mb-4">
                                 <div
-                                    class="bg-neutral text-neutral-content rounded-full w-32 h-32 ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    class="rounded-full w-32 h-32 ring ring-primary ring-offset-base-100 ring-offset-2">
                                     @if ($user->avatar)
                                         <img src="{{ asset('images/avatars/' . $user->avatar) }}" alt="Avatar"
                                             class="object-cover" />
                                     @else
-                                        <span class="text-3xl">{{ strtoupper(substr($user->name, 0, 2)) }}</span>
+                                        <img src="https://ui-avatars.com/api/?name={{ urlencode($user->name) }}&background=random&color=fff&size=256"
+                                            alt="{{ $user->name }}" class="object-cover" />
                                     @endif
                                 </div>
                             </div>

@@ -20,12 +20,14 @@ class DashboardController extends Controller
         $totalCategories = Kategori::count();
         $totalOrders = Order::count();
         $recents = Event::latest()->take(5)->get();
+        $recentOrders = Order::with(['event', 'user'])->latest()->take(5)->get();
 
         return view('admin.dashboard', compact(
             'totalEvents',
             'totalCategories',
             'totalOrders',
-            'recents'
+            'recents',
+            'recentOrders'
         ));
     }
 }
