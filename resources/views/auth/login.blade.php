@@ -54,13 +54,6 @@
                     name="remember" />
                 <span class="ms-2 text-sm text-gray-600">Ingat saya</span>
             </label>
-
-            @if (Route::has('password.request'))
-                <a class="text-sm text-purple-600 hover:text-purple-800 font-medium transition-colors"
-                    href="{{ route('password.request') }}">
-                    Lupa password?
-                </a>
-            @endif
         </div>
 
         <!-- Submit Button -->

@@ -44,6 +44,5 @@ class Event extends Model
     public function getMinPriceAttribute()
     {
         return $this->tikets()->min('harga');
-
     }
 }
