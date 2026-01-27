@@ -9,7 +9,7 @@
                 <article class="card lg:card-side bg-base-100 shadow-md overflow-hidden">
                     <figure class="lg:w-48">
                         <img src="{{ $order->event?->gambar ? asset('storage/' . $order->event->gambar) : 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp' }}"
-                            alt="{{ $order->event?->judul ?? 'Event' }}" class="w-full h-full object-cover" />
+                            alt="{{ $order->event?->judul ?? 'Event' }}" class="w-32 h-auto object-cover" />
                     </figure>
 
                     <div class="card-body flex justify-between ">
