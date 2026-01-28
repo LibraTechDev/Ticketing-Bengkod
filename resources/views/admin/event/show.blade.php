@@ -37,8 +37,7 @@
                         </label>
                         <br>
                         <textarea name="deskripsi" placeholder="Deskripsi lengkap tentang event..."
-                            class="textarea textarea-bordered h-24 w-full" disabled
-                            required>{{ $event->deskripsi }}</textarea>
+                            class="textarea textarea-bordered h-24 w-full" disabled required>{{ $event->deskripsi }}</textarea>
                     </div>
 
                     <!-- Tanggal & Waktu -->
@@ -56,7 +55,8 @@
                             <span class="label-text font-semibold">Lokasi</span>
                         </label>
                         <input type="text" name="lokasi" placeholder="Contoh: Stadion Utama"
-                            class="input input-bordered w-full" value="{{ $event->lokasi }}" disabled required />
+                        class="input input-bordered w-full" value="{{ $event->lokasi->nama_lokasi }}" disabled
+                            required />
                     </div>
 
                     <!-- Kategori -->
@@ -67,7 +67,8 @@
                         <select name="kategori_id" class="select select-bordered w-full" required disabled>
                             <option value="" disabled selected>Pilih Kategori</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}" {{ $category->id == $event->kategori_id ? 'selected' : '' }}>
+                                <option value="{{ $category->id }}"
+                                    {{ $category->id == $event->kategori_id ? 'selected' : '' }}>
                                     {{ $category->nama }}
                                 </option>
                             @endforeach
@@ -80,8 +81,8 @@
                         <label class="label">
                             <span class="label-text font-semibold">Gambar Event</span>
                         </label>
-                        <input type="file" name="gambar" accept="image/*" class="file-input file-input-bordered w-full"
-                            disabled />
+                        <input type="file" name="gambar" accept="image/*"
+                            class="file-input file-input-bordered w-full" disabled />
                         <label class="label">
                             <span class="label-text-alt">Format: JPG, PNG, max 5MB</span>
                         </label>
@@ -133,7 +134,8 @@
                                 <td>
                                     <button class="btn btn-sm btn-primary mr-2" onclick="openEditModal(this)"
                                         data-id="{{ $ticket->id }}" data-tipe="{{ $ticket->tipe }}"
-                                        data-harga="{{ $ticket->harga }}" data-stok="{{ $ticket->stok }}">Edit</button>
+                                        data-harga="{{ $ticket->harga }}"
+                                        data-stok="{{ $ticket->stok }}">Edit</button>
                                     <button class="btn btn-sm bg-red-500 text-white" onclick="openDeleteModal(this)"
                                         data-id="{{ $ticket->id }}">Hapus</button>
                                 </td>
@@ -257,11 +259,11 @@
         const successAlert = document.getElementById('successAlert');
 
         // Preview gambar saat dipilih
-        fileInput.addEventListener('change', function (e) {
+        fileInput.addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     previewImg.src = e.target.result;
                     imagePreview.classList.remove('hidden');
                 };
@@ -270,7 +272,7 @@
         });
 
         // Handle reset
-        form.addEventListener('reset', function () {
+        form.addEventListener('reset', function() {
             imagePreview.classList.add('hidden');
             successAlert.classList.add('hidden');
         });

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\LokasiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\ProfileController;
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('categories', CategoryController::class);
         Route::resource('events', EventController::class);
         Route::resource('tickets', TiketController::class);
+        Route::resource('location', LokasiController::class);
 
         Route::get('/histories', [HistoriesController::class, 'index'])->name('histories.index');
         Route::get('/histories/{id}', [HistoriesController::class, 'show'])->name('histories.show');

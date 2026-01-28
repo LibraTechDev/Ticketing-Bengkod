@@ -107,7 +107,8 @@
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
                                         <td>{{ $event->judul }}</td>
-                                        <td class="text-sm text-base-content/60">{{ $event->created_at->diffForHumans() }}
+                                        <td class="text-sm text-base-content/60">
+                                            {{ $event->created_at->diffForHumans() }}
                                         </td>
                                     </tr>
                                 @empty
@@ -118,12 +119,12 @@
                             </tbody>
                         </table>
                     </div>
-                    @if($recents->count() > 0)
+                    @if ($recents->count() > 0)
                         <div class="mt-4 text-center">
                             <a href="{{ route('admin.events.index') }}" class="btn btn-sm btn-outline btn-primary">
                                 Lihat Semua Event
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>
@@ -159,7 +160,7 @@
                                         <td>
                                             <div class="font-semibold">{{ $order->event?->judul ?? 'N/A' }}</div>
                                             <div class="text-xs text-base-content/60">
-                                                {{ Str::limit($order->event?->lokasi ?? '', 30) }}
+                                                {{ Str::limit($order->event?->deskripsi ?? '', 30) }}
                                             </div>
                                         </td>
                                         <td>
@@ -171,7 +172,8 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <div class="font-medium text-sm">{{ $order->user?->name ?? 'Unknown' }}
+                                                    <div class="font-medium text-sm">
+                                                        {{ $order->user?->name ?? 'Unknown' }}
                                                     </div>
                                                     <div class="text-xs text-base-content/60">
                                                         {{ $order->user?->email ?? '' }}
@@ -191,11 +193,12 @@
                                         <td class="text-center">
                                             <a href="{{ route('admin.histories.show', $order) }}"
                                                 class="btn btn-ghost btn-xs">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
                                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                 </svg>
                                             </a>
@@ -205,8 +208,8 @@
                                     <tr class="text-sm text-base-content/60 italic">
                                         <td colspan="7" class="text-center py-8">
                                             <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="h-12 w-12 mx-auto mb-2 opacity-30" fill="none" viewBox="0 0 24 24"
-                                                stroke="currentColor">
+                                                class="h-12 w-12 mx-auto mb-2 opacity-30" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
                                             </svg>
@@ -217,12 +220,13 @@
                             </tbody>
                         </table>
                     </div>
-                    @if($recentOrders->count() > 0)
+                    @if ($recentOrders->count() > 0)
                         <div class="mt-4 text-center">
-                            <a href="{{ route('admin.histories.index') }}" class="btn btn-sm btn-outline btn-primary">
+                            <a href="{{ route('admin.histories.index') }}"
+                                class="btn btn-sm btn-outline btn-primary">
                                 Lihat Semua Transaksi
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                 </svg>

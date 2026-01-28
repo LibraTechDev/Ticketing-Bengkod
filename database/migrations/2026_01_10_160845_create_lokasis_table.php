@@ -14,15 +14,6 @@ return new class extends Migration
         Schema::create('lokasis', function (Blueprint $table) {
             $table->id();
             $table->string('nama_lokasi');
-            $table->text('alamat')->nullable();
-            $table->string('kota')->nullable();
-            $table->string('provinsi')->nullable();
-            $table->string('negara')->nullable();
-            $table->string('kode_pos')->nullable();
-            $table->string('koordinat')->nullable();
-            $table->text('deskripsi')->nullable();
-            $table->string('foto')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

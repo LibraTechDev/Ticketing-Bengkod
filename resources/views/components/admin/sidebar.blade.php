@@ -11,7 +11,8 @@
         <ul class="menu w-full grow gap-1">
             <!-- Dashboard Item -->
             <li class="{{ request()->routeIs('admin.dashboard') ? 'bg-base-300 rounded-lg' : '' }}">
-                <a href="{{ route('admin.dashboard') }}" class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300"
+                <a href="{{ route('admin.dashboard') }}"
+                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300"
                     data-tip="Dashboard">
                     <!-- Home icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -54,34 +55,49 @@
             <li class="{{ request()->routeIs('admin.histories.*') ? 'bg-base-300 rounded-lg' : '' }}">
                 <a href="{{ route('admin.histories.index') }}"
                     class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300" data-tip="History">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
                     </svg>
                     <span class="is-drawer-close:hidden">History Pembelian</span>
                 </a>
             </li>
+
+            <li class="{{ request()->routeIs('admin.location.*') ? 'bg-base-300 rounded-lg' : '' }}">
+                <a href="{{ route('admin.location.index') }}"
+                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right hover:bg-base-300" data-tip="Lokasi">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2" />
+                    </svg>
+                    <span class="is-drawer-close:hidden">Lokasi Event</span>
+                </a>
+            </li>
         </ul>
 
         <!-- Account Settings Button -->
-       <div class="w-full px-4 pb-2">
+        <div class="w-full px-4 pb-2">
             <a href="{{ route('admin.profile.index') }}"
                 class="btn w-full border hover:bg-blue-600 hover:text-white hover:border-blue-600 is-drawer-close:tooltip is-drawer-close:tooltip-right 
-                {{ request()->routeIs('admin.profile.*') 
-                    ? 'bg-blue-600 text-white border-blue-600' 
+                {{ request()->routeIs('admin.profile.*')
+                    ? 'bg-blue-600 text-white border-blue-600'
                     : 'bg-base-100 text-base-content border-base-300' }}"
                 data-tip="Pengaturan Akun">
-                
+
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                    <path
+                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                    </path>
                     <circle cx="12" cy="12" r="3"></circle>
                 </svg>
-                
+
                 <span class="is-drawer-close:hidden text">Pengaturan Akun</span>
             </a>
-</div>
+        </div>
 
         <!-- logout -->
         <div class="w-full p-4">

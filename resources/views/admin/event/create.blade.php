@@ -56,8 +56,12 @@
                         <label class="label">
                             <span class="label-text font-semibold">Lokasi</span>
                         </label>
-                        <input type="text" name="lokasi" placeholder="Contoh: Stadion Utama"
-                            class="input input-bordered w-full" required />
+                        <select name="lokasi_id" class="select select-bordered w-full" required>
+                            <option value="" disabled selected>Pilih Lokasi</option>
+                            @foreach ($locations as $location)
+                                <option value="{{ $location->id }}">{{ $location->nama_lokasi }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Kategori -->
@@ -78,8 +82,8 @@
                         <label class="label">
                             <span class="label-text font-semibold">Gambar Event</span>
                         </label>
-                        <input type="file" name="gambar" accept="image/*"
-                            class="file-input file-input-bordered w-full" required />
+                        <input type="file" name="gambar" accept="image/*" class="file-input file-input-bordered w-full"
+                            required />
                         <label class="label">
                             <span class="label-text-alt">Format: JPG, PNG, max 5MB</span>
                         </label>
@@ -126,11 +130,11 @@
         const successAlert = document.getElementById('successAlert');
 
         // Preview gambar saat dipilih
-        fileInput.addEventListener('change', function(e) {
+        fileInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     previewImg.src = e.target.result;
                     imagePreview.classList.remove('hidden');
                 };
@@ -139,7 +143,7 @@
         });
 
         // Handle reset
-        form.addEventListener('reset', function() {
+        form.addEventListener('reset', function () {
             imagePreview.classList.add('hidden');
             successAlert.classList.add('hidden');
         });

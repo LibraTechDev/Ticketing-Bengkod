@@ -14,7 +14,7 @@ class Event extends Model
         'judul',
         'deskripsi',
         'tanggal_waktu',
-        'lokasi',
+        'lokasi_id',
         'kategori_id',
         'gambar',
     ];

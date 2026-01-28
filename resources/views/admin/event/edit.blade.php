@@ -41,8 +41,14 @@
                         <label class="label">
                             <span class="label-text font-semibold">Lokasi</span>
                         </label>
-                        <input type="text" name="lokasi" placeholder="Contoh: Stadion Utama"
-                            class="input input-bordered w-full" value="{{ $event->lokasi }}" required />
+                        <select name="lokasi_id" class="select select-bordered w-full" required>
+                            <option value="" disabled>Pilih Lokasi</option>
+                            @foreach ($locations as $location)
+                                <option value="{{ $location->id }}" {{ $location->id == $event->lokasi_id ? 'selected' : '' }}>
+                                    {{ $location->nama_lokasi }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Kategori -->
@@ -53,8 +59,7 @@
                         <select name="kategori_id" class="select select-bordered w-full" required>
                             <option value="" disabled selected>Pilih Kategori</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}"
-                                    {{ $category->id == $event->kategori_id ? 'selected' : '' }}>
+                                <option value="{{ $category->id }}" {{ $category->id == $event->kategori_id ? 'selected' : '' }}>
                                     {{ $category->nama }}
                                 </option>
                             @endforeach
@@ -83,8 +88,7 @@
                         <div class="avatar max-w-sm">
                             <div class="w-full rounded-lg">
                                 @if ($event->gambar)
-                                    <img id="previewImg" src="{{ asset('storage/' . $event->gambar) }}"
-                                        alt="Preview">
+                                    <img id="previewImg" src="{{ asset('storage/' . $event->gambar) }}" alt="Preview">
                                 @else
                                     <img id="previewImg" src="" alt="Preview">
                                 @endif
@@ -120,11 +124,11 @@
         const successAlert = document.getElementById('successAlert');
 
         // Preview gambar saat dipilih
-        fileInput.addEventListener('change', function(e) {
+        fileInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     previewImg.src = e.target.result;
                     imagePreview.classList.remove('hidden');
                 };
@@ -133,7 +137,7 @@
         });
 
         // Handle reset
-        form.addEventListener('reset', function() {
+        form.addEventListener('reset', function () {
             imagePreview.classList.add('hidden');
             successAlert.classList.add('hidden');
         });
